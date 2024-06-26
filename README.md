@@ -1,66 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# MVC Node.js Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a simple web application for managing and displaying student information (name, address, age). The application is built using the Model-View-Controller (MVC) pattern and utilizes various web application frameworks (WAFs).
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   [Technologies Used](#technologies-used)
+-   [Project Structure](#project-structure)
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+    -   [Running the Project](#running-the-project)
+-   [MVC Pattern Explanation](#mvc-pattern-explanation)
+-   [Routes](#routes)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies Used
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Laravel
+-   Vite
+-   SQLite
+-   Axios
 
-## Learning Laravel
+## Project Structure
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+root
+├── app
+|   ├──Http/Controllers
+│   |   ├── Controller.php
+│   |   └── delete-all-student.js
+│   ├── Modles
+|   |   └── Student.php
+|   └── ...
+├── resources
+│   ├── js
+|   |   ├── app.js
+|   |   ├── bootstrap.js
+|   |   └── deleteAll.js
+|   ├── views
+|   │   ├── layouts
+|   │   |   └── app.blade.php
+|   │   └── students
+|   │       ├── create.blade.php
+|   │       └── index.blade.php
+|   └── ...
+├── routes
+│   ├── console.php
+│   └── web.php
+└── ...
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Getting Started
 
-## Laravel Sponsors
+### Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   Composer (package manager)
+-   Yarn (package manager)
 
-### Premium Partners
+### Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+1. Clone the repository:
 
-## Contributing
+```bash
+git clone https://github.com/alialghanay/mvc-laravel-project.git
+cd mvc-laravel-project
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Install the dependencies:
 
-## Code of Conduct
+```bash
+yarn install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Running the Project:
 
-## Security Vulnerabilities
+1. Start the server:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan serve
+yarn run dev
+```
 
-## License
+2. Open your browser and navigate to:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```URL
+http://127.0.0.1:8000/
+```
+
+## MVC Pattern Explanation
+
+### Model
+
+The model manages the data and business logic. In this project, Student.php defines the schema for the student data and interacts with the SQLite database.
+
+### View
+
+The views handle the presentation logic. The project uses blade.php templates to render HTML. The views are located in the resources/views directory.
+
+### Controller
+
+The controllers manage the application logic and user input. They handle the flow of data between the model and the view. The controllers are located in the app/Http/Controllers directory.
+
+### Routes
+
+Dashboard: Displays a list of students.
+`GET /`
+Add Student: Provides a form to add a new student.
+`GET /add-student`
+`POST /api/add-student`
+Delete All Students: Deletes all student records.
+`POST /api/delete-all`

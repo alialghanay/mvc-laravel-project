@@ -1,4 +1,4 @@
-# MVC Node.js Project
+# MVC LARAVEL Project
 
 This project is a simple web application for managing and displaying student information (name, address, age). The application is built using the Model-View-Controller (MVC) pattern and utilizes various web application frameworks (WAFs).
 

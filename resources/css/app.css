@@ -1,0 +1,47 @@
+.container h2 {
+    font-family: "Arial", sans-serif;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.table {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: center;
+}
+
+.table th {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.table td {
+    font-size: 1em;
+    font-weight: normal;
+}
